@@ -214,6 +214,21 @@ def sample(self):
     return (states, actions, rewards, next_states, dones)  
 ```
 
+### Hyperparameters used
+
+Here, in 'ddpg_agent.py' file we have some hyperparameters to ours neural nets and buffer memory. We can use a lot of strategies to define this parameters like grid search to find best ones, but I used the default numbers suggested in Nanodegree Lessons about deep reinforcement learning and can be found here:
+
+```python
+BUFFER_SIZE = int(1e6)  # replay buffer size
+BATCH_SIZE = 128        # minibatch size
+GAMMA = 0.99            # discount factor
+TAU = 1e-3              # for soft update of target parameters
+LR_ACTOR = 1e-4         # learning rate of the actor
+LR_CRITIC = 1e-4        # learning rate of the critic
+WEIGHT_DECAY = 0.0      # L2 weight decay
+```
+
+
 ### Plot of Rewards
 
 In the next figure we can see the plot of Score x Episodes til the end of episodes or the agent solve the task (Mean of last 100 scores equal or greater than +30.0).
